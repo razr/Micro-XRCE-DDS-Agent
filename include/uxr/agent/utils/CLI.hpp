@@ -507,7 +507,7 @@ private:
 /*************************************************************************************************
  * Serial Subcommand
  *************************************************************************************************/
-#ifndef _WIN32
+#if !defined(_WIN32) && !defined(__VXWORKS__)
 class TermiosSubcommand : public ServerSubcommand
 {
 public:
