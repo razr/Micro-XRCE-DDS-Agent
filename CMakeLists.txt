@@ -31,7 +31,7 @@ option(UAGENT_FAST_PROFILE "Build FastMiddleware profile." ON)
 option(UAGENT_CED_PROFILE "Build CedMiddleware profile." ON)
 option(UAGENT_DISCOVERY_PROFILE "Build Discovery profile." ON)
 option(UAGENT_P2P_PROFILE "Build P2P discovery profile." OFF)
-option(UAGENT_LOGGER_PROFILE "Build logger profile." OFF)
+option(UAGENT_LOGGER_PROFILE "Build logger profile." ON)
 option(UAGENT_SECURITY_PROFILE "Build security profile." OFF)
 
 option(UAGENT_BUILD_CI_TESTS "Build CI test cases.")
