@@ -108,11 +108,11 @@ if(UAGENT_FAST_PROFILE)
                 fastcdr
             UPDATE_COMMAND
                 COMMAND ${CMAKE_COMMAND} -E copy <SOURCE_DIR>/src/cpp/CMakeLists.txt <SOURCE_DIR>/src/cpp/CMakeLists.txt.bak
+		COMMAND patch -p 1 < ${CMAKE_CURRENT_SOURCE_DIR}/fastrtps/0003-remove-CMAKE_DL_LIBS.patch
                 COMMAND ${CMAKE_COMMAND} -DSOVERSION_FILE=<SOURCE_DIR>/src/cpp/CMakeLists.txt -P ${PROJECT_SOURCE_DIR}/cmake/Soversion.cmake
             PATCH_COMMAND
 	        COMMAND patch -p 1 < ${CMAKE_CURRENT_SOURCE_DIR}/fastrtps/0001-comment-CMAKE_SHARED_LINKER_FLAGS.patch
 		COMMAND patch -p 1 < ${CMAKE_CURRENT_SOURCE_DIR}/fastrtps/0002-undef-NONE.patch
-		COMMAND patch -p 1 < ${CMAKE_CURRENT_SOURCE_DIR}/fastrtps/0003-remove-CMAKE_DL_LIBS.patch
 		COMMAND patch -p 1 < ${CMAKE_CURRENT_SOURCE_DIR}/fastrtps/0004-set-munmap-to-0.patch
 		COMMAND patch -p 1 < ${CMAKE_CURRENT_SOURCE_DIR}/fastrtps/0005-skip-find-package-THREADS.patch
 		COMMAND patch -p 1 < ${CMAKE_CURRENT_SOURCE_DIR}/fastrtps/0006-skip-find-package_OpenSSL.patch
